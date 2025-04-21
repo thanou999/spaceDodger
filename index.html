@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Space Destroyer</title>
+  <style>
+    body { margin: 0; background: black; }
+    canvas { display: block; margin: auto; background: black; }
+    /* Overlay pour la saisie du nom quand on bat le record */
+    #nameInputContainer {
+      display: none;
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      text-align: center;
+      z-index: 10;
+    }
+    #nameInputContainer > div {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    #nameInputContainer p {
+      color: white;
+      font-size: 24px;
+      margin: 0;
+      padding: 0 20px;
+    }
+    #playerNameInput {
+      font-size: 20px;
+      padding: 8px;
+      width: 300px;
+      margin-top: 10px;
+    }
+    #restartButton {
+      font-size: 20px;
+      padding: 10px 20px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="gameCanvas" width="1000" height="800"></canvas>
+  
+  <!-- Overlay pour la saisie du nom en cas de nouveau record -->
+  <div id="nameInputContainer">
+    <div>
+      <p>Nouveau record ! Entrez votre nom :</p>
+      <input type="text" id="playerNameInput" placeholder="Votre nom" />
+      <br/>
+      <button id="restartButton">Relancer le jeu</button>
+    </div>
+  </div>
+  
+  <script src="game.js"></script>
+</body>
+</html>
