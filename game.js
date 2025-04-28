@@ -26,8 +26,7 @@ function readHighScore() {
     const hs = localStorage.getItem("high_score");
     const name = localStorage.getItem("high_score_name");
     return {
-      score: hs ? parseInt(hs) : 0,
-      name: name || "Anonyme"
+      score: hs ? parseInt(hs) : 0
     };
   }
   
@@ -39,7 +38,7 @@ function readHighScore() {
   function checkHighScore(score) {
     const { score: highScore } = readHighScore();
     if (score > highScore) {
-      const name = prompt("Nouveau High Score ! Entrez votre nom :") || "Anonyme";
+      const name = prompt("Nouveau High Score ! Entrez votre nom :");
       writeHighScore(score, name);
       return { score, name };
     }
